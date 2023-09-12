@@ -1,34 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-   background-color: #372775; 
-}
-
-@font-face {
-    font-family: Averia Libre;
-    src: url(../assets/fonts/averia-libre.light.ttf)
-}
-
-h1 {
-    font-size: 40pt;
-    margin-top: 20px;
-    color: #FFFFFF;
-    font-family: Averia Libre;
-    font-weight: lighter;
-}
-
-header{
-    height: 80px;
-    display: flex;
-}  
-
-#imagemheader{
-    text-align: left;
-    margin-top: 20px;
-    margin-right: 10px;
-    margin-left: 20px;
-}
-
 #boxlogin{
     border: 1px solid #737373;
     border-radius: 15px;
@@ -40,15 +9,11 @@ header{
 }
 
 #titulobox{
-    font-family: Averia Libre;
-    color: #FFFFFF;
     font-size: 18pt;
     padding-left: 180px;          
 }
 
 .emailsenha{
-    font-family: Averia Libre;
-    color: #FFFFFF;
     font-size: 24px;                                     
 }
 
@@ -88,16 +53,17 @@ header{
 }
 
 #boxcriarentrar{
-    padding-top: 100px;
-    padding-left: 45px;    
-   display: flex;     
+   padding: 25px;
+   display: flex; 
+   justify-content: space-between;
+   align-items: center;
+   padding-top: 100px;
 }
 
 #criarConta{
     font-family: Averia Libre;
     font-size: 20px;
     color: #3F92C5;
-    padding-right: 180px;
 }
 
 #botaoEntrar{
@@ -105,8 +71,6 @@ header{
     height: 40px;
     background-color: #37BD6D;
     border-radius: 10px;
-    font-family: Averia Libre;
-    color: #FFFFFF;
     font-size: 20px;
     border-color: #37BD6D;
 }

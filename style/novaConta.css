@@ -1,33 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-   background-color: #372775; 
-}
-
-@font-face {
-    font-family: Averia Libre;
-    src: url(../assets/fonts/averia-libre.light.ttf)
-}
-
-h1 {
-    font-size: 40pt;
-    margin-top: 20px;
-    color: #FFFFFF;
-    font-family: Averia Libre;
-    font-weight: lighter;
-}
-
-header{
-    height: 80px;
-    display: flex;
-}  
-
-#imagemheader{
-    text-align: left;
-    margin-top: 20px;
-    margin-right: 10px;
-    margin-left: 20px;
-}
 #boxnovaConta{
     border: 1px solid #737373;
     border-radius: 15px;
@@ -39,16 +9,12 @@ header{
 }
 
 #titulobox{
-    font-family: Averia Libre;
-    color: #FFFFFF;
     font-size: 18pt;
     padding-left: 65px; 
     padding-top: 5px;         
 }
 
 .emailsenha{
-    font-family: Averia Libre;
-    color: #FFFFFF;
     font-size: 24px;                                     
 }
 
@@ -84,8 +50,6 @@ header{
     height: 40px;
     background-color: #37BD6D;
     border-radius: 10px;
-    font-family: Averia Libre;
-    color: #FFFFFF;
     font-size: 20px;
     border-color: #37BD6D;
     margin-top: 45px;
