@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+   background-color: #372775; 
+}
+
+@font-face {
+    font-family: Averia Libre;
+    src: url(../assets/fonts/averia-libre.light.ttf)
+}
+
+h1 {
+    font-size: 40pt;
+    margin-top: 20px;
+    color: #FFFFFF;
+    font-family: Averia Libre;
+    font-weight: lighter;
+}
+
+header{
+    height: 80px;
+    display: flex;
+}  
+
+#imagemheader{
+    text-align: left;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 20px;
+}
+#boxnovaConta{
+    border: 1px solid #737373;
+    border-radius: 15px;
+    width: 488px;
+    height: 455px;
+    margin-left: 35%;
+    margin-top: 5%; 
+    padding-top: 40px;  
+}
+
+#titulobox{
+    font-family: Averia Libre;
+    color: #FFFFFF;
+    font-size: 18pt;
+    padding-left: 65px; 
+    padding-top: 5px;         
+}
+
+.emailsenha{
+    font-family: Averia Libre;
+    color: #FFFFFF;
+    font-size: 24px;                                     
+}
+
+.inputsnovaconta{
+    align-items: center;
+    width: 420px;
+    height: 39px;
+    font-size: 20px;
+    font-family: Averia Libre;
+    color: #3F92C5;
+    background-color: #FFFFFF;    
+}
+
+#inputemail{
+    padding-top: 55px;
+    padding-left: 30px;             
+}
+
+#inputsenha{
+    padding-top: 10px;
+    padding-left: 30px;   
+}
+
+#senhasnaoconferem{
+    font-family: Averia Libre;
+    font-size: 13pt;
+    color: #FD7979;  
+    padding-left: 30px;  
+}
+
+#botaoCriar{
+    width: 134px;
+    height: 40px;
+    background-color: #37BD6D;
+    border-radius: 10px;
+    font-family: Averia Libre;
+    color: #FFFFFF;
+    font-size: 20px;
+    border-color: #37BD6D;
+    margin-top: 45px;
+    margin-left: 320px;
+}
+

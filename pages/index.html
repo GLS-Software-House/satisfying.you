@@ -4,166 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../assets/images/logosmile.png">
+    <link rel="stylesheet" href="../style/index.css">
     <title>Satisfying.you</title>
-
-    <style>
-
-            * {
-                margin: 0;
-                padding: 0;
-               background-color: #372775; 
-            }
-
-            @font-face {
-                font-family: Averia Libre;
-                src: url(../assets/fonts/averia-libre.light.ttf)
-}
-
-           h1 {
-                font-size: 40pt;
-                margin-top: 20px;
-                color: #FFFFFF;
-                font-family: Averia Libre;
-              
-            }
-
-            header{
-                background-color: #372775;
-                height: 80px;
-                display: flex;
-            }  
-            #imagemheader{
-                text-align: left;
-                margin-top: 20px;
-                margin-right: 10px;
-                margin-left: 20px;
-            }
-
-            #boxlogin{
-                border: 1px solid #737373;
-                border-radius: 15px;
-                width: 488px;
-                height: 455px;
-                margin-left: 35%;
-                margin-top: 5%; 
-                padding-top: 40px;  
-            }
-
-            #fazerlogin{
-                font-family: Averia Libre;
-                color: #FFFFFF;
-                font-size: 18pt;
-                padding-left: 180px;          
-            }
-
-            .emailsenha{
-                font-family: Averia Libre;
-                color: #FFFFFF;
-                font-size: 24px;                                     
-            }
-
-            #boxemail{
-                padding-top: 60px;
-                padding-left: 30px;             
-            }
-
-            .inputemailsenha{
-                align-items: center;
-                width: 424px;
-                height: 39px;
-                font-size: 20px;
-                padding-left: 10px;
-                font-family: Averia Libre;
-                color: #3F92C5;
-                background-color: #FFFFFF;               
-            }
-
-            #boxsenha{
-                padding-top: 10px;
-                padding-left: 30px;   
-            }
-
-            #esinvalidos{
-                font-family: Averia Libre;
-                font-size: 13pt;
-                color: #FD7979;  
-                padding-left: 30px;  
-            }
-
-            #esqueciasenha{
-                font-family: Averia Libre;
-                font-size: 18px;
-                padding-left: 45px;
-                color: #3F92C5;
-            }
-
-            #boxcriarentrar{
-                padding-top: 100px;
-                padding-left: 45px;    
-               display: flex;     
-            }
-
-            #criarConta{
-                font-family: Averia Libre;
-                font-size: 20px;
-                color: #3F92C5;
-                padding-right: 180px;
-            }
-
-            #botaoEntrar{
-                width: 134px;
-                height: 40px;
-                background-color: #37BD6D;
-                border-radius: 10px;
-                font-family: Averia Libre;
-                color: #FFFFFF;
-                font-size: 20px;
-                border-color: #37BD6D;
-            }
-               
-            
-    </style>
 
     <header>
         <img id="imagemheader" src="../assets/images/logosmile.png" alt="emoji smile com bordas brancas">
         <h1>Satisfying.you</h1>
     </header>
 </head>
+
 <body>
-    <main id="boxlogin">
-        <span id="fazerlogin">Fazer login</span>
-        <div>
-            <div id="boxemail">
-                <span class="emailsenha">E-mail</span>
-                <br>
-                <input class="inputemailsenha" type="email">
-            </div>
+    <main>
+        <div id="boxlogin">
 
-            <div id="boxsenha">
-                <span class="emailsenha">Senha</span>
-                <br>
-                <input class="inputemailsenha" type="password">
-            </div>
-        
-        
-            <span id="esinvalidos">E-mail e/ou senha inválidos.</span>
-
-            <a href="recuperarSenha.html" id="esqueciasenha">Esqueci minha senha</a>
-        </div>
-        
-        <div id="boxcriarentrar">
-            <a href="novaConta.html" id="criarConta">Criar conta</a>
-
-            <a href="home.html"><button id="botaoEntrar">Entrar</button></a>
+            <span id="titulobox">Fazer login</span>
             
+            <form action="home.html">
+
+                <div id="inputemail">
+                    <span class="emailsenha">E-mail</span>
+                    <br>
+                    <input class="inputemailsenha" type="email">
+                </div>
+
+                <div id="inputsenha">
+                    <span class="emailsenha">Senha</span>
+                    <br>
+                    <input class="inputemailsenha" type="password">
+                </div>
+            
+                <span id="esinvalidos">E-mail e/ou senha inválidos.</span>
+
+                <a href="recuperarSenha.html" id="esqueciasenha">Esqueci minha senha</a>
+
+                <div id="boxcriarentrar">
+                    <a href="novaConta.html" id="criarConta">Criar conta</a>
+
+                    <input id="botaoEntrar" type="submit" name="acao" value="Entrar">
+                        
+                </div>
+
+            </form>
+
+          
 
         </div>
-
-
 
     </main>
-
-    
-    
+      
 </body>
 </html>
