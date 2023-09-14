@@ -22,37 +22,37 @@
 
         </div>
     </header>
+
     <main>
-        <div id="boxnovaConta">
+        <form action="home.html">
+            <div class="box">
 
-            <span class=" " id="titulobox">Criar uma conta no Satisfying.you</span>
-            
-            <form action="index.html">
-                
-                <div id="inputemail">
-                    <span class="emailsenha  ">E-mail</span>
-                    <br>
-                    <input class="inputsnovaconta" type="email">
+                <div class="box-title">
+                    <h2>Criar uma conta no Satisfying.you</h2>
                 </div>
 
-                <div id="inputsenha">
-                    <span class="emailsenha  ">Senha</span>
-                    <br>
-                    <input class="inputsnovaconta" type="password">
+                <div class="box-content">
+                    <div class="email">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" value="jurandir.pereira@hotmail.com">
+                    </div>
+                    <div class="password">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" value="*********">
+                    </div>
+                    <div class="password">
+                        <label for="password">Repetir senha</label>
+                        <input type="password" id="password" value="*********">
+                    </div>
+                    <div class="error-forgot">
+                        <span>Senhas não conferem.</span>
+                    </div>
+                    <div class="action-button">
+                        <button type="submit">Criar</button>
+                    </div>
                 </div>
 
-                <div id="inputsenha">
-                    <span class="emailsenha  ">Repetir senha</span>
-                    <br>
-                    <input class="inputsnovaconta" type="password">
-                </div>
-            
-                <span id="senhasnaoconferem">Senhas não conferem</span>
-              
-                <input class=" " id="botaoCriar" type="submit" name="acao" value="Criar">
-                 
-            </form>      
-                  
-        </div>
+            </div>
+        </form>
 
     </main>
