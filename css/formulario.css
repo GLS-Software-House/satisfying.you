@@ -1,0 +1,173 @@
+/* box style */
+.box {
+    display: flex;
+    width: 30.5rem;
+    height: 28.438rem;
+    margin: 3%;
+    padding: 0;
+    border-radius: 15px;
+    border: 1px solid #737373;
+}
+
+.box-title {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 7rem;
+    width: 100%;
+}
+
+.box-input {
+    height: 3rem;
+    background-color: #FD7979;
+}
+
+.box-button {
+
+}
+
+/* label style */
+.box-title {
+    font-size: 18pt;
+    padding-left: 125px;          
+}
+.error-message {
+    font-size: 13pt;
+    color: #FD7979;  
+    padding-left: 30px;  
+}
+
+#esqueciasenha{
+    font-size: 18px;
+    padding-left: 45px;
+    color: #3F92C5;
+}
+
+#textoauxiliar{
+    font-size: 14pt;
+    padding-top: 5px;
+    padding-left: 90px;
+}
+
+#titulobox{
+    font-size: 18pt;
+    padding-left: 65px; 
+    padding-top: 5px;         
+}
+
+/* input style */
+#titulo-box{
+    font-size: 18pt;
+    padding-left: 180px;          
+}
+
+.email-senha{
+    font-size: 24px;                                     
+}
+
+#input-email{
+    padding-top: 60px;
+    padding-left: 25px;             
+}
+
+.input-email-senha{
+    align-items: center;
+    width: 424px;
+    height: 39px;
+    font-size: 20px;
+    padding-left: 10px;
+    color: #3F92C5;
+    background-color: #FFFFFF;               
+}
+
+#input-senha{
+    padding-top: 10px;
+    padding-left: 25px;   
+}
+
+#criar-Conta{
+    font-size: 20px;
+    color: #3F92C5;
+}
+
+.inputemailsenha{
+    align-items: center;
+    width: 424px;
+    height: 39px;
+    font-size: 20px;
+    padding-left: 10px;
+    color: #3F92C5;
+    background-color: #FFFFFF;               
+}
+
+#inputemail{
+    padding-top: 60px;
+    padding-left: 25px;             
+}
+
+.emailsenha{
+    font-size: 24px;                                     
+}
+
+.emailsenha{
+    font-size: 24px;                                     
+}
+
+.inputsnovaconta{
+    align-items: center;
+    width: 420px;
+    height: 39px;
+    font-size: 20px;
+    color: #3F92C5;
+    background-color: #FFFFFF;    
+}
+
+#inputemail{
+    padding-top: 55px;
+    padding-left: 30px;             
+}
+
+#inputsenha{
+    padding-top: 10px;
+    padding-left: 30px;   
+}
+
+/* button style */
+#botao-entrar{
+    width: 134px;
+    height: 40px;
+    background-color: #37BD6D;
+    border-radius: 10px;
+    font-size: 20px;
+    border-color: #37BD6D;
+}
+
+#botaoCriar{
+    width: 134px;
+    height: 40px;
+    background-color: #37BD6D;
+    border-radius: 10px;
+    font-size: 20px;
+    border-color: #37BD6D;
+    margin-top: 45px;
+    margin-left: 320px;
+}
+
+#boxbotaoRecuperar{
+    padding-top: 70px;   
+    display: flex;  
+    justify-content: flex-end;   
+    padding-right: 30px;
+}
+
+#botaoRecuperar{
+    width: 134px;
+    height: 40px;
+    background-color: #37BD6D;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 20px;
+    border-color: #37BD6D;
+}
