@@ -1,0 +1,79 @@
+.headerPrincipal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.button2 {
+    order: 2;
+    margin-left: auto;
+    width: 145px;
+    height: 40px;
+    background-color: #37BD6D;
+    border-radius: 10px;
+    font-size: 20px;
+    border-color: #37BD6D;
+}
+
+.nav-menu{
+    align-items: flex-end;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.pesquisa {
+    margin-top: 35px;
+    background-color: white;
+    color: #8B8B8B;
+    width: 92%;
+    height: 40px;
+    justify-content: center;
+}
+
+.lupinha{
+    padding-top: 7px;
+    padding-left: 8px;
+    width: 23.4px;
+    height: 23px;
+}
+
+.content{
+    padding-top: 150px;
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: 400px 400px 400px 300px;
+    padding-left: 150px;
+  
+}
+
+.box1 {
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    border-radius: 6%;
+    display: flex;
+    justify-content: center;
+
+    
+}
+
+.box1Content {
+    color: #3F92C5;
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+}
+
+.data{
+    color: #8B8B8B;
+    font-size: 20px;
+}
