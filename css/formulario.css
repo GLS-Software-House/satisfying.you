@@ -1,4 +1,5 @@
 /* box style */
+
 .box {
     display: grid;
     width: 30.5rem;
@@ -12,6 +13,7 @@
 
 .box-title {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -26,12 +28,18 @@
     padding: 1.5rem;
 }
 
+.box-input {
+    width: 100%;
+}
+
 /* box-content content style */
+
 label {
     font-size: 1.5rem;
     display: block;
     text-align: left;
 }
+
 
 input {
     width: 100%;
@@ -52,18 +60,16 @@ button {
 
 span {
     display: flex;
-    flex-direction: row; /* Alinha os elementos em uma linha */
+    flex-direction: row;
     align-items: flex-start;
     font-size: 13pt;
     color: #FD7979;
 }
 
-.email {
-    width: 100%;
-}
-
-.password {
-    width: 100%;
+.box-input img {   
+    display: flex;
+    align-items: start;
+    margin-top: 0.1rem;
 }
 
 .error-forgot {
@@ -90,4 +96,24 @@ span {
     order: 1;
     margin-right: auto;
     color: #3F92C5;
+}
+
+#file-uploaded-name {
+    display: flex;
+    width: 60%;
+    background-color: #DBDBDB;
+}
+
+.label-file-input {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    width: 134px;
+    height: 40px;
+    background-color: #A4A4A4;
+    font-size: 16px;
+    border-color: #37BD6D;
+
 }

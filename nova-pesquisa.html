@@ -30,17 +30,19 @@
                 </div>
 
                 <div class="box-content">
-                    <div class="email">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" value="jurandir.pereira@hotmail.com">
+                    <div class="box-input">
+                        <label for="nome-pesquisa">Nome da pesquisa</label>
+                        <input type="text" id="nome-pesquisa" value="jurandir.pereira@hotmail.com">
                     </div>
-                    <div class="email">
-                        <label for="email">Data</label>
-                        <input type="email" id="email" value="23/05/2023">
+                    <div class="box-input">
+                        <label for="data">Data</label>
+                        <input type="datetime" id="data" value="23/05/2023">
                     </div>
-                    <div class="email">
-                        <label for="email">Imagem</label>
-                        <input type="email" id="email" value="carnaval2022.png">
+                    <div class="box-input">
+                        <label for="file-uploaded-name">Imagem</label>
+                        <input type="text" id="file-uploaded-name" value="carnaval2022.png">
+                        <label for="my-file-input" class="label-file-input">Escolher arquivo</label><input type="file" hidden="true" id="my-file-input">
+                        <img src="img/mask.png" alt="Imagem de upload" width="100" height="100">
                     </div>
 
                     <div class="action-button">
@@ -51,6 +53,15 @@
             </div>
         </form>
     </main>
+    <script>
+        const fileInput = document.querySelector("#my-file-input");
+        const textInput = document.querySelector("#file-uploaded-name");
+
+        fileInput.addEventListener("change", () => {
+            const filename = fileInput.files[0] ? fileInput.files[0].name : "Nenhum ficheiro selecionado";
+            textInput.value = filename;
+        });
+    </script>
 </body>
 
 </html>
