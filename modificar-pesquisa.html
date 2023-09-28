@@ -6,10 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/formulario.css">
-    <link rel="stylesheet" href="css/pop-up.css">
     <link href="https://fonts.cdnfonts.com/css/averia-libre" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <link rel="icon" type="image/x-icon" href="icon/favicon.ico">
     <title>Satisfying.you</title>
+    <style>
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+
+        .modal-content {
+            background-color: #2B1F5C;
+            padding: 20px;
+            width: 400px;
+            height: 10rem;
+            margin: 100px auto;
+        }
+
+        .modal-header {
+            border-bottom: 1px solid #ccc;
+        }
+
+        .modal-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .modal-body {
+            font-size: 16px;
+        }
+
+        .modal-actions {
+            text-align: right;
+        }
+
+        .modal-close,
+        .modal-confirm {
+            width: 100px;
+            height: 30px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .modal-close:hover,
+        .modal-confirm:hover {
+            background-color: #222;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,7 +70,10 @@
             <h1 class="title-header">Satisfying.you</h1>
         </div>
         <div class="nav-menu">
-            <span>Apagar</span>
+            <div class="" id="apagar" style="display: flex; flex-direction: column; align-items: center;">
+                <i class="fa-regular fa-trash-can" style="color: #F57F7F; font-size: 1.5rem;"></i>
+                <a class="modal-open" style="color: #F57F7F; text-decoration: none; font-size: 0.8rem;">Apagar</a>
+            </div>
             <a href="">Sair</a>
         </div>
     </header>
@@ -28,31 +82,79 @@
             <div class="box">
 
                 <div class="box-title">
-                    <h2>Atualize os dados da pesquisa</h2>
+                    <h2>Criar nova pesquisa de satisfação</h2>
                 </div>
 
                 <div class="box-content">
                     <div class="box-input">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" value="jurandir.pereira@hotmail.com">
+                        <label for="nome-pesquisa">Nome da pesquisa</label>
+                        <input type="text" id="nome-pesquisa" value="jurandir.pereira@hotmail.com">
                     </div>
                     <div class="box-input">
-                        <label for="email">Data</label>
-                        <input type="email" id="email" value="23/05/2023">
+                        <label for="data">Data</label>
+                        <input type="datetime" id="data" value="23/05/2023">
                     </div>
                     <div class="box-input">
-                        <label for="email">Imagem</label>
-                        <input type="email" id="email" value="carnaval2022.png">
+                        <label for="file-uploaded-name">Imagem</label>
+                        <div class="" style="display: flex;">
+                            <input type="text" id="file-uploaded-name" value="carnaval2022.png">
+                            <label for="my-file-input" class="label-file-input">Escolher arquivo</label><input
+                                type="file" hidden="true" id="my-file-input">
+                        </div>
                     </div>
-
                     <div class="action-button">
-                        <button type="submit">Salvar</button>
+                        <img src="img/mask.png" alt="Imagem de upload" width="100" height="100">
+                        <button type="submit">Criar</button>
                     </div>
                 </div>
 
             </div>
         </form>
+
+        <div class="modal">
+            <div class="modal-content">
+                <h2>Tem certeza de apagar essa pesquisa?</h2>
+                <div class="modal-actions">
+                    <button class="modal-close" style="background-color: #FF8383;">Sim</button>
+                    <button class="modal-confirm" style="background-color: #3F92C5;">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
     </main>
+    <script>
+        const fileInput = document.querySelector("#my-file-input");
+        const textInput = document.querySelector("#file-uploaded-name");
+
+        fileInput.addEventListener("change", () => {
+            const filename = fileInput.files[0] ? fileInput.files[0].name : "Nenhum ficheiro selecionado";
+            textInput.value = filename;
+        });
+
+        function openModal() {
+            // Obtém o elemento modal
+            const modal = document.querySelector(".modal");
+
+            // Define o modal como visível
+            modal.style.display = "block";
+        }
+
+        // Adiciona o evento de clique ao botão de abertura
+        document.querySelector(".modal-open").addEventListener("click", openModal);
+
+        // Adiciona o evento de clique ao botão de fechar
+        document.querySelector(".modal-close").addEventListener("click", () => {
+            // Define o modal como invisível
+            document.querySelector(".modal").style.display = "none";
+        });
+
+        // Adiciona o evento de clique ao botão de confirmar
+        document.querySelector(".modal-confirm").addEventListener("click", () => {
+            // Faz algo quando o botão de confirmar for clicado
+            // Por exemplo, você pode excluir a pesquisa
+        });
+
+    </script>
 </body>
 
 </html>
