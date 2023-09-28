@@ -6,61 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/formulario.css">
+    <link rel="stylesheet" href="css/pop-up.css">
     <link href="https://fonts.cdnfonts.com/css/averia-libre" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <link rel="icon" type="image/x-icon" href="icon/favicon.ico">
     <title>Satisfying.you</title>
-    <style>
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: none;
-        }
-
-        .modal-content {
-            background-color: #2B1F5C;
-            padding: 20px;
-            width: 400px;
-            height: 10rem;
-            margin: 100px auto;
-        }
-
-        .modal-header {
-            border-bottom: 1px solid #ccc;
-        }
-
-        .modal-title {
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .modal-body {
-            font-size: 16px;
-        }
-
-        .modal-actions {
-            text-align: right;
-        }
-
-        .modal-close,
-        .modal-confirm {
-            width: 100px;
-            height: 30px;
-            color: white;
-            border: none;
-            cursor: pointer;
-            outline: none;
-        }
-
-        .modal-close:hover,
-        .modal-confirm:hover {
-            background-color: #222;
-        }
-    </style>
 </head>
 
 <body>
@@ -132,26 +82,14 @@
         });
 
         function openModal() {
-            // Obtém o elemento modal
             const modal = document.querySelector(".modal");
-
-            // Define o modal como visível
             modal.style.display = "block";
         }
-
-        // Adiciona o evento de clique ao botão de abertura
         document.querySelector(".modal-open").addEventListener("click", openModal);
-
-        // Adiciona o evento de clique ao botão de fechar
         document.querySelector(".modal-close").addEventListener("click", () => {
-            // Define o modal como invisível
             document.querySelector(".modal").style.display = "none";
         });
-
-        // Adiciona o evento de clique ao botão de confirmar
         document.querySelector(".modal-confirm").addEventListener("click", () => {
-            // Faz algo quando o botão de confirmar for clicado
-            // Por exemplo, você pode excluir a pesquisa
         });
 
     </script>
