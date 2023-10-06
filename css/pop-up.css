@@ -41,9 +41,5 @@
     border: none;
     cursor: pointer;
     outline: none;
-}
-
-.modal-close:hover,
-.modal-confirm:hover {
-    background-color: #222;
+    text-decoration: none;
 }

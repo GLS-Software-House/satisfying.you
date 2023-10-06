@@ -1,0 +1,34 @@
+.reactions{
+    padding-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* Three columns for the boxes */
+    grid-gap: 90px; /* Adjust the gap between boxes */
+    justify-content: center; /* Center the boxes horizontally */
+    align-items: center; /* Center the boxes vertically */
+}
+
+.imgEmoji{
+    width:  150px;
+}
+
+.reaction{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.titulo{
+    justify-content: center;
+    padding-top: 20px;
+    font-size: 40px;
+}
+
+.sair2{
+    color: #3F92C5;
+    float: right;
+    margin-right: 20px;
+    padding-top: 20px;
+}
+

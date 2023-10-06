@@ -82,6 +82,8 @@ span {
     align-items: flex-end;
     width: 100%;
     height: 50%;
+    padding-top: 5px;
+    padding-bottom: 30px;
 }
 .action-button a {
     order: 1;
