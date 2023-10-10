@@ -1,0 +1,16 @@
+.pie-chart {
+    display: flex;
+    flex: 6;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-right: 3rem;
+}
+
+.pie-chart-description {
+    flex: 4;
+}
+
+.stacked-list {
+    list-style-type: none;
+    padding: 10px;
+}

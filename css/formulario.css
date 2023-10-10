@@ -9,7 +9,7 @@
     border-radius: 15px;
     border: 1px solid #737373;
     grid-template-rows: 30% 70%;
-  }
+}
 
 .box-title {
     display: flex;
@@ -57,7 +57,7 @@ span {
     color: #FD7979;
 }
 
-.box-input img {   
+.box-input img {
     display: flex;
     align-items: start;
     margin-top: 0.1rem;
@@ -85,6 +85,7 @@ span {
     padding-top: 5px;
     padding-bottom: 30px;
 }
+
 .action-button a {
     order: 1;
     margin-right: auto;

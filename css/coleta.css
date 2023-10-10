@@ -1,17 +1,17 @@
-.reactions{
+.reactions {
     padding-top: 60px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* Three columns for the boxes */
-    grid-gap: 90px; /* Adjust the gap between boxes */
-    justify-content: center; /* Center the boxes horizontally */
-    align-items: center; /* Center the boxes vertically */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 90px;
+    justify-content: center;
+    align-items: center;
 }
 
-.imgEmoji{
-    width:  150px;
+.imgEmoji {
+    width: 150px;
 }
 
-.reaction{
+.reaction {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,16 +19,15 @@
     text-decoration: none;
 }
 
-.titulo{
+.titulo {
     justify-content: center;
     padding-top: 20px;
     font-size: 40px;
 }
 
-.sair2{
+.sair2 {
     color: #3F92C5;
     float: right;
     margin-right: 20px;
     padding-top: 20px;
 }
-
