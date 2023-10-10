@@ -44,10 +44,10 @@ input{
   .content {
     padding-top: 100px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 0.1fr; /* Three columns for the boxes */
-    grid-gap: 120px; /* Adjust the gap between boxes */
-    justify-content: center; /* Center the boxes horizontally */
-    align-items: center; /* Center the boxes vertically */
+    grid-template-columns: 1fr 1fr 1fr 0.1fr; 
+    grid-gap: 120px;
+    justify-content: center; 
+    align-items: center; 
   }
   .box1 {
     background-color: white;
