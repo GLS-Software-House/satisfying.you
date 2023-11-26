@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/formulario.css">
     <link href="https://fonts.cdnfonts.com/css/averia-libre" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="icon/favicon.ico">
+    <script src="./scripts/nova-conta.js"></script>
     <title>Satisfying.you</title>
 </head>
 
@@ -27,21 +28,21 @@
                 <div class="box-content">
                     <div class="box-input">
                         <label for="email">E-mail</label>
-                        <input type="email" id="email" value="jurandir.pereira@hotmail.com">
+                        <input type="email" id="email">
                     </div>
                     <div class="box-input">
                         <label for="password">Senha</label>
-                        <input type="password" id="password" value="*********">
+                        <input type="password" id="password">
                     </div>
                     <div class="box-input">
                         <label for="password">Repetir senha</label>
-                        <input type="password" id="password" value="*********">
+                        <input type="password" id="repeatPassword">
                     </div>
                     <div class="error-forgot">
-                        <span>Senhas não conferem.</span>
+                        <span id="erroSenha"></span>
                     </div>
                     <div class="action-button">
-                        <button type="submit">Criar</button>
+                        <button type="button" onclick="criarConta()">Criar</button>
                     </div>
                 </div>
             </div>

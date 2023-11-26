@@ -10,6 +10,9 @@
     <link href="https://fonts.cdnfonts.com/css/averia-libre" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <link rel="icon" type="image/x-icon" href="icon/favicon.ico">
+    <script src="./scripts/modificar-pesquisa.js"></script>
+    <script src="./scripts/home.js"></script>
+    <script src="./nova-pesquisa.html"></script>
     <title>Satisfying.you</title>
 </head>
 
@@ -36,16 +39,16 @@
                 <div class="box-content">
                     <div class="box-input">
                         <label for="nome-pesquisa">Nome da pesquisa</label>
-                        <input type="text" id="nome-pesquisa" value="jurandir.pereira@hotmail.com">
+                        <input type="text" id="nome-pesquisa">
                     </div>
                     <div class="box-input">
                         <label for="data">Data</label>
-                        <input type="datetime" id="data" value="23/05/2023">
+                        <input type="datetime" id="data">
                     </div>
                     <div class="box-input">
                         <label for="file-uploaded-name">Imagem</label>
                         <div class="" style="display: flex;">
-                            <input type="text" id="file-uploaded-name" value="carnaval2022.png">
+                            <input type="text" id="file-uploaded-name">
                             <label for="my-file-input" class="label-file-input">Escolher arquivo</label><input
                                 type="file" hidden="true" id="my-file-input">
                         </div>
@@ -61,7 +64,7 @@
             <div class="modal-content">
                 <h2>Tem certeza de apagar essa pesquisa?</h2>
                 <div class="modal-actions">
-                    <button class="modal-close" style="background-color: #FF8383;"><a class="modal-close" href="home.html">Sim</a></button>
+                    <button onclick="apagarPesquisa(nomePesquisa)" class="modal-close" style="background-color: #FF8383;"><a class="modal-close" href="home.html">Sim</a></button>
                     <button class="modal-confirm" style="background-color: #3F92C5;"><a class="modal-confirm" href="modificar-pesquisa.html">Cancelar</a></button>
                 </div>
             </div>
@@ -86,6 +89,7 @@
         });
         document.querySelector(".modal-confirm").addEventListener("click", () => {
         });
+
     </script>
 </body>
 

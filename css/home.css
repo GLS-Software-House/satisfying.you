@@ -1,10 +1,10 @@
 
   
-  .nav-menu {
-    align-items: flex-end;
-    justify-content: flex-end;
-    margin-right: 50px;
-  }
+.nav-menu {
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-right: 50px;
+}
   
 input{
   border: none;
@@ -58,17 +58,9 @@ input{
     border-radius: 6%;
     display: flex;
     justify-content: center;
+    color: black;
   }
 
-  .box2 {
-    background-color: white;
-    width: 120px;
-    height: 250px;
-    border-radius: 6%;
-    display: flex;
-    justify-content: center;
-   
-  }
 
   .txt{
     color: #3F92C5;

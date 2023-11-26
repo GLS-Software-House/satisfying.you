@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/formulario.css">
     <link href="https://fonts.cdnfonts.com/css/averia-libre" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="icon/favicon.ico">
+    <script src="./scripts/index.js"></script>
     <title>Satisfying.you</title>
 </head>
 
@@ -27,19 +28,19 @@
                 <div class="box-content">
                     <div class="box-input">
                         <label for="email">E-mail</label>
-                        <input type="email" id="email" value="jurandir.pereira@hotmail.com">
+                        <input type="email" id="email">
                     </div>
                     <div class="box-input">
                         <label for="password">Senha</label>
-                        <input type="password" id="password" value="*********">
+                        <input type="password" id="password" >
                     </div>
                     <div class="error-forgot">
-                        <span>E-mail e/ou senha inválidos.</span>
+                        <span id="error-message"></span>
                         <a href="recuperar-senha.html" style="text-decoration: none;">Esqueci minha senha</a>
                     </div>
                     <div class="action-button">
                         <a href="nova-conta.html">Criar conta</a>
-                        <button type="submit">Entrar</button>
+                        <button type="button" onclick="autentica()">Entrar</button>
                     </div>
                 </div>
             </div>
