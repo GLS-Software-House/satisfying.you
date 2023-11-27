@@ -1,61 +1,121 @@
-    // nova pesquisa
-    
-    const fileInput = document.querySelector("#my-file-input");
-    const textInput = document.querySelector("#file-uploaded-name");
+// Recuperar pesquisas do localStorage
+var pesquisas = JSON.parse(localStorage.getItem('pesquisas')) || [];
 
-    function exibirImagem() {
-        var input = document.getElementById('my-file-input');
-        var imagem = document.getElementById('imagem');
+// Cadastro de pesquisa
+function criarPesquisa() {
 
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
+    // Obter os valores dos campos do formulário
+    var nomePesquisa = document.getElementById('nome-pesquisa').value;
+    var dataPesquisa = document.getElementById('data').value;
+    var urlImagem = document.getElementById('my-file-input').value;
 
-            reader.onload = function (e) {
-                imagem.src = e.target.result;
-            };
+    // Criar um objeto representando a pesquisa
+    var novaPesquisa = {
+        id: pesquisas.length + 1,
+        nome: nomePesquisa,
+        data: dataPesquisa,
+        imagem: urlImagem
+    };
 
-            reader.readAsDataURL(input.files[0]);
-        }
-        document.getElementById('file-uploaded-name').value = input.files[0].name;
+    // Adicionar a nova pesquisa à lista de pesquisas temporárias
+    pesquisas.push(novaPesquisa);
+
+    // Armazenar a lista atualizada no Local Storage
+    localStorage.setItem('pesquisas', JSON.stringify(pesquisas));
+
+    // Redirecionar para a página home.html
+    // window.location.href = 'home.html';
+
+}
+
+// Recuperação de pesquisa
+function recuperarPesquisa() {
+
+    // Você pode iterar sobre as pesquisas e fazer o que for necessário com os dados
+    pesquisas.forEach(function (pesquisa) {
+        // console.log('ID:', pesquisa.id);
+        // console.log('Nome:', pesquisa.nome);
+        // console.log('Data:', pesquisa.data);
+        // console.log('Imagem:', pesquisa.imagem);
+        // console.log('---------------------');
+    });
+}
+
+// Alteração de pesquisa
+function alterarPesquisa() {
+    // Obter o ID da pesquisa que você deseja alterar (substitua 'ID_DA_PESQUISA' pelo ID real)
+    var idPesquisa = 'ID_DA_PESQUISA';
+
+    // Encontrar a pesquisa com base no ID
+    var pesquisaParaAlterar = pesquisas.find(function (pesquisa) {
+        return pesquisa.id === idPesquisa;
+    });
+
+    if (pesquisaParaAlterar) {
+        // Alterar os dados conforme necessário
+        pesquisaParaAlterar.nome = 'Novo Nome';
+        pesquisaParaAlterar.data = 'Nova Data';
+        pesquisaParaAlterar.imagem = 'Nova URL da Imagem';
+
+        // Atualizar a lista no Local Storage
+        localStorage.setItem('pesquisas', JSON.stringify(pesquisas));
+
+        // console.log('Pesquisa alterada com sucesso!');
+    } else {
+        // console.log('Pesquisa não encontrada.');
     }
+}
 
-    function criarNovaPesquisa() {
+// Exclusão de pesquisa
+function excluirPesquisa() {
 
-        // Obter os valores dos campos do formulário
-        var nomePesquisa = document.getElementById('nome-pesquisa').value;
-        var dataPesquisa = document.getElementById('data').value;
-        var urlImagem = document.getElementById('file-uploaded-name').value;
-    
-        // Criar um objeto representando a pesquisa
-        var novaPesquisa = {
-            nome: nomePesquisa,
-            data: dataPesquisa,
-            imagem: urlImagem
-        };
-    
-        // Obter pesquisas temporárias existentes do Local Storage (se houver)
-        var pesquisasTemporarias = JSON.parse(localStorage.getItem('pesquisasTemporarias')) || [];
-    
-        // Adicionar a nova pesquisa à lista de pesquisas temporárias
-        pesquisasTemporarias.push(novaPesquisa);
-    
-        // Armazenar a lista atualizada no Local Storage
-        localStorage.setItem('pesquisasTemporarias', JSON.stringify(pesquisasTemporarias));
-    
-        // Redirecionar para a página home.html
-        window.location.href = 'home.html';
-    }  
+}
 
-    // modificar pesquisa
-// Recupere pesquisas temporárias do localStorage
-var pesquisasTemporarias = JSON.parse(localStorage.getItem('pesquisasTemporarias')) || [];
-console.log(pesquisasTemporarias);
+// Geração de card
+function gerarCard(nome, data, imagemUrl) {
+    // Crie um novo elemento div para representar o card
+    var novoCard = document.createElement('div');
+    novoCard.classList.add('box1', 'pesquisa-temporaria-');
 
-// novos valores
-var nomePesquisa = document.getElementById('nome-pesquisa').value;
-const data = document.querySelector("#data").value;
-// const fileInput = document.querySelector("#my-file-input");
-// const textInput = document.querySelector("#file-uploaded-name");
+    // Crie um link dentro do card
+    var link = document.createElement('a');
+    link.href = 'acoes-pesquisa.html';
+    link.classList.add('box1Content');
+
+    // Adicione a imagem ao link
+    var imagem = document.createElement('img');
+    imagem.src = imagemUrl;
+    imagem.alt = 'Imagem da pesquisa';
+    imagem.classList.add('img');
+    link.appendChild(imagem);
+
+    // Adicione o nome ao link
+    var nomeElemento = document.createElement('span');
+    nomeElemento.textContent = nome;
+    nomeElemento.classList.add('box1Content');
+    link.appendChild(nomeElemento);
+
+    // Adicione a data ao link
+    var dataElemento = document.createElement('span');
+    dataElemento.textContent = data;
+    dataElemento.classList.add('data');
+    link.appendChild(dataElemento);
+
+    // Adicione o link ao card
+    novoCard.appendChild(link);
+
+    // Adicione o card ao conteúdo da página
+    var contentDiv = document.querySelector('.content');
+    contentDiv.appendChild(novoCard);
+}
+
+// Filtragem de pesquisa
+function filtrarPesquisa() {
+
+}
+
+
+
 
 function exibirImagem() {
     var input = document.getElementById('my-file-input');
@@ -73,21 +133,18 @@ function exibirImagem() {
     document.getElementById('file-uploaded-name').value = input.files[0].name;
 }
 
-function openModal() {
-    const modal = document.querySelector(".modal");
-    modal.style.display = "block";
-}
-document.querySelector(".modal-open").addEventListener("click", openModal);
-document.querySelector(".modal-close").addEventListener("click", () => {
-    document.querySelector(".modal").style.display = "none";
-});
-document.querySelector(".modal-confirm").addEventListener("click", () => {
-});
+// function openModal() {
+//     const modal = document.querySelector(".modal");
+//     modal.style.display = "block";
+// }
+// document.querySelector(".modal-open").addEventListener("click", openModal);
+// document.querySelector(".modal-close").addEventListener("click", () => {
+//     document.querySelector(".modal").style.display = "none";
+// });
+// document.querySelector(".modal-confirm").addEventListener("click", () => {
+// });
 
 function apagarPesquisa(nomePesquisa) {
-    // Recupere pesquisas temporárias do localStorage
-    console.log(nomePesquisa)
-    var pesquisasTemporarias = JSON.parse(localStorage.getItem('pesquisasTemporarias')) || [];
 
     // Encontre a pesquisa pelo nome e remova-a
     // pesquisasTemporarias = pesquisasTemporarias.filter(function (pesquisa) {
@@ -118,49 +175,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (pesquisasTemporarias.length > 0) {
         // Iterar sobre as pesquisas temporárias e criar os cards
         pesquisasTemporarias.forEach(function (pesquisa) {
-            criarCard(pesquisa.nome, pesquisa.data, pesquisa.imagem);
+            gerarCard(pesquisa.nome, pesquisa.data, pesquisa.imagem);
         });
 
     
     }
 });
-
-function criarCard(nome, data, imagemUrl) {
-
-    // Crie um novo elemento div para representar o card
-    var novoCard = document.createElement('div');
-    novoCard.classList.add('box1', 'pesquisa-temporaria-');
-
-    // Crie um link dentro do card
-    var link = document.createElement('a');
-    link.href = 'acoes-pesquisa.html';
-    link.classList.add('box1Content');
-
-    // Adicione a imagem ao link
-    var imagem = document.createElement('img');
-    imagem.src = imagemUrl;
-    console.log(imagemUrl);
-    imagem.alt = 'Imagem da pesquisa';
-    imagem.classList.add('img');
-    link.appendChild(imagem);
-
-    // Adicione o nome ao link
-    var nomeElemento = document.createElement('span');
-    nomeElemento.textContent = nome;
-    nomeElemento.classList.add('box1Content');
-    link.appendChild(nomeElemento);
-
-    // Adicione a data ao link
-    var dataElemento = document.createElement('span');
-    dataElemento.textContent = data;
-    dataElemento.classList.add('data');
-    link.appendChild(dataElemento);
-
-    // Adicione o link ao card
-    novoCard.appendChild(link);
-    console.log(novoCard);
-
-    // Adicione o card ao conteúdo da página
-    var contentDiv = document.querySelector('.content');
-    contentDiv.appendChild(novoCard);
-}

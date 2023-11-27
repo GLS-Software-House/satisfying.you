@@ -1,13 +1,11 @@
-// Array para armazenar contas (email e senha)
+// Buscar contas existentes (email e senha)
 if (localStorage.getItem('contas')) {
     var contas = JSON.parse(localStorage.getItem('contas'));
 } else {
     var contas = [];
 }
 
-console.log("Contas Fora",contas);
-
-// Criar nova conta
+// Cadastro de usuário
 function criarConta() {
 
     // Verificar se o email já está cadastrado
@@ -51,7 +49,7 @@ function criarConta() {
 
     }
 
-// Entrar
+// Autenticação de usuário
 function entrar() {
 
     // Verificar credenciais
@@ -69,5 +67,4 @@ function entrar() {
             document.getElementById('error-message').textContent = '';
         }, 3000);
     }
-    
 }
