@@ -8,9 +8,6 @@
     <link rel="stylesheet" href="css/formulario.css">
     <link href="https://fonts.cdnfonts.com/css/averia-libre" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="icon/favicon.ico">
-    <script src="./scripts/home.js"></script>
-    <script src="./scripts/nova-pesquisa.js"></script>
-    
     <title>Satisfying.you</title>
 </head>
 
@@ -39,15 +36,16 @@
                         <label for="data">Data</label>
                         <input type="datetime" id="data">
                     </div>
-                    <div class="box-input">
+                    <div class="box-input" onclick="abrirSelecaoImagem()">
                         <label for="file-uploaded-name">Imagem</label>
                         <div class="" style="display: flex;">
                             <input type="text" id="file-uploaded-name">
-                            <label for="my-file-input" class="label-file-input">Escolher arquivo</label><input id="my-file-input" type="button" hidden="true" onclick="exibirImagem()">
+                            <label for="my-file-input" class="label-file-input">Escolher arquivo</label>
+                            <input id="my-file-input" type="file" accept="image/*" style="display: none;" onchange="exibirImagem()">
                         </div>
                     </div>
                     <div class="action-button">
-                        <img src="" id="imagem" alt="Imagem de upload" width="100" height="100">
+                        <img id="imagem" width="100" height="100">
                         <button type="button" onclick="criarNovaPesquisa()">Criar</button>
                     </div>
                 </div>
@@ -56,6 +54,7 @@
 
         </form>
     </main>
+    <script src="./scripts/pesquisa.js"></script>
 </body>
 
 </html>
