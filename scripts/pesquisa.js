@@ -106,23 +106,13 @@ function filtrarPesquisa() {
         });
 }
 
-
-
 function exibirImagem() {
-    var input = document.getElementById('my-file-input');
-    var imagem = document.getElementById('imagem');
-
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            imagem.src = e.target.result;
-        };
-
-        reader.readAsDataURL(input.files[0]);
+    var urlImagem = document.getElementById('file-uploaded-name').value;
+    if (urlImagem) {
+        document.getElementById('imagem').src = urlImagem;
     }
-    document.getElementById('file-uploaded-name').value = input.files[0].name;
 }
+
 
 // function openModal() {
 //     const modal = document.querySelector(".modal");

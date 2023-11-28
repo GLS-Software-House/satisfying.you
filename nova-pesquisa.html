@@ -36,12 +36,11 @@
                         <label for="data">Data</label>
                         <input type="datetime" id="data">
                     </div>
-                    <div class="box-input" onclick="abrirSelecaoImagem()">
+                    <div class="box-input">
                         <label for="file-uploaded-name">Imagem</label>
                         <div class="" style="display: flex;">
                             <input type="text" id="file-uploaded-name">
-                            <label for="my-file-input" class="label-file-input">Escolher arquivo</label>
-                            <input id="my-file-input" type="file" accept="image/*" style="display: none;" onchange="exibirImagem()">
+                            <label for="my-file-input" class="label-file-input">Escolher arquivo</label><input id="my-file-input" type="button" hidden="true" onclick="exibirImagem()">
                         </div>
                     </div>
                     <div class="action-button">
