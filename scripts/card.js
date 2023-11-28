@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function recuperarPesquisa() {
 
     if (pesquisas.length > 0) {
         pesquisas.forEach(function (pesquisa) {
@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function criarCard(id, nome, data, imagemUrl) {
-    // Crie um novo elemento div para representar o card
 
+    // Crie um novo elemento div para representar o card
     var novoCard = document.createElement('div');
     novoCard.classList.add('box1', 'pesquisa-temporaria-');
 

@@ -25,9 +25,33 @@
     font-size: 40px;
 }
 
-.sair2 {
-    color: #3F92C5;
-    float: right;
-    margin-right: 20px;
-    padding-top: 20px;
+
+/* Media query para dispositivos com largura de tela até 768px (incluindo tablets) */
+@media only screen and (max-width: 768px) {
+    .imgEmoji {
+        width: 20%;
+    }
+    .reactions {
+        justify-content: center;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        padding-top: 10px;
+    }
+    .titulo {
+        display: flex;
+        justify-content: center;
+        font-size: 25px;
+        text-align: center;
+    }
+    .main {
+        max-width: 100%;
+        align-items: stretch;
+    }
+    body {
+        align-items: center;
+    }
+
+    span{
+        font-size: 80%;
+    }
 }

@@ -7,7 +7,7 @@ function criarPesquisa() {
     // Obter os valores dos campos do formulário
     var nomePesquisa = document.getElementById('nome-pesquisa').value;
     var dataPesquisa = document.getElementById('data').value;
-    var urlImagem = document.getElementById('my-file-input').value;
+    var urlImagem = document.getElementById('file-uploaded-name').value;
 
     // Criar um objeto representando a pesquisa
     var novaPesquisa = {
@@ -24,25 +24,23 @@ function criarPesquisa() {
     localStorage.setItem('pesquisas', JSON.stringify(pesquisas));
 
     // Redirecionar para a página home.html
-    // window.location.href = 'home.html';
+    window.location.href = 'home.html';
 
-}
-
-// Recuperação de pesquisa
-function recuperarPesquisa() {
-
-    // Você pode iterar sobre as pesquisas e fazer o que for necessário com os dados
-    pesquisas.forEach(function (pesquisa) {
-        // console.log('ID:', pesquisa.id);
-        // console.log('Nome:', pesquisa.nome);
-        // console.log('Data:', pesquisa.data);
-        // console.log('Imagem:', pesquisa.imagem);
-        // console.log('---------------------');
-    });
 }
 
 // Alteração de pesquisa
 function alterarPesquisa() {
+            // Obtém a URL da página
+            var url_string = window.location.href;
+        
+            // Cria um objeto URL
+            var url = new URL(url_string);
+            
+            // Obtém o valor do parâmetro "id" da URL
+            var id = url.searchParams.get("id");
+            
+            // Exibe o valor do ID no console
+            console.log("ID:", id);
     // Obter o ID da pesquisa que você deseja alterar (substitua 'ID_DA_PESQUISA' pelo ID real)
     var idPesquisa = 'ID_DA_PESQUISA';
 
@@ -71,49 +69,12 @@ function excluirPesquisa() {
 
 }
 
-// Geração de card
-function gerarCard(nome, data, imagemUrl) {
-    // Crie um novo elemento div para representar o card
-    var novoCard = document.createElement('div');
-    novoCard.classList.add('box1', 'pesquisa-temporaria-');
 
-    // Crie um link dentro do card
-    var link = document.createElement('a');
-    link.href = 'acoes-pesquisa.html';
-    link.classList.add('box1Content');
-
-    // Adicione a imagem ao link
-    var imagem = document.createElement('img');
-    imagem.src = imagemUrl;
-    imagem.alt = 'Imagem da pesquisa';
-    imagem.classList.add('img');
-    link.appendChild(imagem);
-
-    // Adicione o nome ao link
-    var nomeElemento = document.createElement('span');
-    nomeElemento.textContent = nome;
-    nomeElemento.classList.add('box1Content');
-    link.appendChild(nomeElemento);
-
-    // Adicione a data ao link
-    var dataElemento = document.createElement('span');
-    dataElemento.textContent = data;
-    dataElemento.classList.add('data');
-    link.appendChild(dataElemento);
-
-    // Adicione o link ao card
-    novoCard.appendChild(link);
-
-    // Adicione o card ao conteúdo da página
-    var contentDiv = document.querySelector('.content');
-    contentDiv.appendChild(novoCard);
-}
 
 // Filtragem de pesquisa
 function filtrarPesquisa() {
 
 }
-
 
 
 
