@@ -1,7 +1,12 @@
 .nav-menu {
-  align-items: flex-end;
   justify-content: flex-end;
   margin-right: 50px;
+  display: flex; 
+  align-items: center;
+}
+
+.nav-menu > div{
+  display: flex; flex-direction: column; align-items: center; margin-right: 1rem
 }
   
 input{
@@ -84,6 +89,38 @@ input{
 /* Media query para dispositivos com largura de tela até 768px (incluindo tablets) */
 @media only screen and (max-width: 768px) {
 
+  header {
+    height: 8rem;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    width: 100%;
+
+  }
+
+  .nav-menu{
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-menu > div{
+    margin-right: 0px;
+  }
+
+
+  button{
+
+    width: 6rem;
+  }
+
   .box1 {
     background-color: white;
     width: 250px;
@@ -92,17 +129,6 @@ input{
     display: flex;
     justify-content: center;
     color: black;
-  }
-
-  header {
-    margin: 0;
-    display: grid;
-    grid-template-rows: 1fr auto; /* Define duas linhas, a primeira com 1fr de altura e a segunda automática */
-    height: 100vh; /* Toda a altura da viewport */
-  }
-
-  .logo {
-    width: 100%;
   }
 
   .content {
