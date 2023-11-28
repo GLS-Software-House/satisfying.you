@@ -14,7 +14,13 @@ function criarPesquisa() {
         id: pesquisas.length + 1,
         nome: nomePesquisa,
         data: dataPesquisa,
-        imagem: urlImagem
+        imagem: urlImagem,
+        pessimo: 0,
+        ruim: 0,
+        neutro: 0,
+        bom: 0,
+        excelente: 0,
+        total: 0,
     };
 
     // Adicionar a nova pesquisa à lista de pesquisas temporárias
@@ -28,6 +34,20 @@ function criarPesquisa() {
 
 }
 
+contabilizarVoto = function (voto) {
+    var url_string = document.referrer;
+    var url = new URL(url_string);
+    var id = url.searchParams.get("id");
+
+    pesquisas.forEach(function (pesquisa) {
+        if (pesquisa.id == id) {
+            pesquisa[voto]++;
+            pesquisa.total++;
+        }
+    });
+    localStorage.setItem('pesquisas', JSON.stringify(pesquisas));
+    window.location.href = 'resultado.html?id=' + id;
+}
 
 
 // Alteração de pesquisa
@@ -37,7 +57,6 @@ function alterarPesquisa() {
     var url_string = document.referrer;
     var url = new URL(url_string);
     var id = url.searchParams.get("id");
-    console.log(id);
 
     pesquisas.forEach(function (pesquisa) {
         if (pesquisa.id == id){
@@ -48,10 +67,6 @@ function alterarPesquisa() {
         }
         });
 
-    // Encontra a pesquisa pelo id
-    var pesquisaParaAlterar = pesquisas.find(function (pesquisa) {
-        return pesquisa.id === id;
-    });
 }
 
 // Exclusão de pesquisa
