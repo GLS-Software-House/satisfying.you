@@ -43,7 +43,7 @@ function alterarPesquisa() {
         if (pesquisa.id == id){
             pesquisa.nome = document.getElementById('nome-pesquisa').value;
             pesquisa.data = document.getElementById('data').value;
-            document.getElementById('file-uploaded-name').value;
+            pesquisa.imagem = document.getElementById('file-uploaded-name').value;
             localStorage.setItem('pesquisas', JSON.stringify(pesquisas));
         }
         });
