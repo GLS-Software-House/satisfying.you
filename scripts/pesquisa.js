@@ -28,55 +28,30 @@ function criarPesquisa() {
 
 }
 
-// preencher os campos do formulário de alteração
-function preencherCampos() {
 
-    // Obtém o id da URL
-    var url_string = window.location.href;
-    var url = new URL(url_string);
-    var id = url.searchParams.get("id");
-
-    // Encontra a pesquisa pelo id
-    var pesquisaParaAlterar = pesquisas.find(function (pesquisa) {
-        return pesquisa.id === id;
-    });
-
-    if (pesquisaParaAlterar) {
-        // Preencher os campos do formulário
-        document.getElementById('nome-pesquisa').value = pesquisaParaAlterar.nome;
-        document.getElementById('data').value = pesquisaParaAlterar.data;
-        document.getElementById('file-uploaded-name').value = pesquisaParaAlterar.imagem;
-    } else {
-        console.log('Pesquisa não encontrada.');
-    }
-}
 
 // Alteração de pesquisa
 function alterarPesquisa() {
 
     // Obtém o id da URL
-    var url_string = window.location.href;
+    var url_string = document.referrer;
     var url = new URL(url_string);
     var id = url.searchParams.get("id");
+    console.log(id);
+
+    pesquisas.forEach(function (pesquisa) {
+        if (pesquisa.id == id){
+            pesquisa.nome = document.getElementById('nome-pesquisa').value;
+            pesquisa.data = document.getElementById('data').value;
+            document.getElementById('file-uploaded-name').value;
+            localStorage.setItem('pesquisas', JSON.stringify(pesquisas));
+        }
+        });
 
     // Encontra a pesquisa pelo id
     var pesquisaParaAlterar = pesquisas.find(function (pesquisa) {
         return pesquisa.id === id;
     });
-
-    if (pesquisaParaAlterar) {
-        // Alterar os dados conforme necessário
-        pesquisaParaAlterar.nome = 'Novo Nome';
-        pesquisaParaAlterar.data = 'Nova Data';
-        pesquisaParaAlterar.imagem = 'Nova URL da Imagem';
-
-        // Atualizar a lista no Local Storage
-        localStorage.setItem('pesquisas', JSON.stringify(pesquisas));
-
-        // console.log('Pesquisa alterada com sucesso!');
-    } else {
-        // console.log('Pesquisa não encontrada.');
-    }
 }
 
 // Exclusão de pesquisa
