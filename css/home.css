@@ -117,14 +117,13 @@ input{
 
 
   button{
-
     width: 6rem;
   }
 
   .box1 {
     background-color: white;
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
     border-radius: 6%;
     display: flex;
     justify-content: center;
@@ -134,11 +133,18 @@ input{
   .content {
     padding-top: 100px;
     display: grid;
-    grid-template-columns: repeat(1, 1fr); /* Duas colunas centralizadas */
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas centralizadas */
     grid-gap: 20px; /* Espaçamento entre as colunas */
     justify-content: center; 
     align-items: center; 
 }
 
+.box1Content{
+  font-size: 15px;
+}
+
+.data {
+  font-size: 10px;
+}
 
 }
