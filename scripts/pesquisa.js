@@ -28,25 +28,40 @@ function criarPesquisa() {
 
 }
 
+// preencher os campos do formulário de alteração
+function preencherCampos() {
+
+    // Obtém o id da URL
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var id = url.searchParams.get("id");
+
+    // Encontra a pesquisa pelo id
+    var pesquisaParaAlterar = pesquisas.find(function (pesquisa) {
+        return pesquisa.id === id;
+    });
+
+    if (pesquisaParaAlterar) {
+        // Preencher os campos do formulário
+        document.getElementById('nome-pesquisa').value = pesquisaParaAlterar.nome;
+        document.getElementById('data').value = pesquisaParaAlterar.data;
+        document.getElementById('file-uploaded-name').value = pesquisaParaAlterar.imagem;
+    } else {
+        console.log('Pesquisa não encontrada.');
+    }
+}
+
 // Alteração de pesquisa
 function alterarPesquisa() {
-            // Obtém a URL da página
-            var url_string = window.location.href;
-        
-            // Cria um objeto URL
-            var url = new URL(url_string);
-            
-            // Obtém o valor do parâmetro "id" da URL
-            var id = url.searchParams.get("id");
-            
-            // Exibe o valor do ID no console
-            console.log("ID:", id);
-    // Obter o ID da pesquisa que você deseja alterar (substitua 'ID_DA_PESQUISA' pelo ID real)
-    var idPesquisa = 'ID_DA_PESQUISA';
 
-    // Encontrar a pesquisa com base no ID
+    // Obtém o id da URL
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var id = url.searchParams.get("id");
+
+    // Encontra a pesquisa pelo id
     var pesquisaParaAlterar = pesquisas.find(function (pesquisa) {
-        return pesquisa.id === idPesquisa;
+        return pesquisa.id === id;
     });
 
     if (pesquisaParaAlterar) {
@@ -73,7 +88,22 @@ function excluirPesquisa() {
 
 // Filtragem de pesquisa
 function filtrarPesquisa() {
-
+    
+        // Obter o valor do campo de filtro
+        var filtro = document.getElementById('filtro').value;
+    
+        // Filtrar as pesquisas pelo nome
+        var pesquisasFiltradas = pesquisas.filter(function (pesquisa) {
+            return pesquisa.nome.toLowerCase().includes(filtro.toLowerCase());
+        });
+    
+        // Limpar a lista de pesquisas
+        document.getElementById('content').innerHTML = '';
+    
+        // Iterar sobre as pesquisas filtradas e criar os cards
+        pesquisasFiltradas.forEach(function (pesquisa) {
+            criarCard(pesquisa.id, pesquisa.nome, pesquisa.data, pesquisa.imagem);
+        });
 }
 
 
