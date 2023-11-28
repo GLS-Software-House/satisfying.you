@@ -30,6 +30,7 @@ function criarConta() {
 
     // Criar um objeto representando a conta
     var novaConta = {
+        idUsuario: contas.length + 1,
         email: email.value,
         password: password.value
     };
@@ -58,7 +59,8 @@ function entrar() {
     });
 
     if (credenciaisCorretas) {
-        window.location.href = 'home.html';
+        localStorage.setItem('usuarioLogado', JSON.stringify(credenciaisCorretas.idUsuario));
+        window.location.href = 'home.html' + '?idUsuario=' + credenciaisCorretas.idUsuario;
         return;
     } else {
 

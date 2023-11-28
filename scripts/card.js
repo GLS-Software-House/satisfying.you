@@ -2,15 +2,16 @@ document.addEventListener('DOMContentLoaded', function recuperarPesquisa() {
 
     if (pesquisas.length > 0) {
         pesquisas.forEach(function (pesquisa) {
-            criarCard(pesquisa.id, pesquisa.nome, pesquisa.data, pesquisa.imagem);
+            criarCard(pesquisa.idUsuario, pesquisa.id, pesquisa.nome, pesquisa.data, pesquisa.imagem);
         });
 
 
     }
 });
 
-function criarCard(id, nome, data, imagemUrl) {
-
+function criarCard(idUsuario, id, nome, data, imagemUrl) {
+    var logado = JSON.parse(localStorage.getItem('usuarioLogado')) || [];
+    if(logado == idUsuario){
     // Crie um novo elemento div para representar o card
     var novoCard = document.createElement('div');
     novoCard.classList.add('box1', 'pesquisa-temporaria-');
@@ -48,4 +49,5 @@ function criarCard(id, nome, data, imagemUrl) {
     // Adicione o card ao conteúdo da página
     var contentDiv = document.querySelector('.content');
     contentDiv.appendChild(novoCard);
+}
 }

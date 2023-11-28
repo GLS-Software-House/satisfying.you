@@ -3,6 +3,9 @@ var pesquisas = JSON.parse(localStorage.getItem('pesquisas')) || [];
 
 // Cadastro de pesquisa
 function criarPesquisa() {
+    // Obtém o id da URL
+    var url_string = document.referrer;
+    var url = new URL(url_string);
 
     // Obter os valores dos campos do formulário
     var nomePesquisa = document.getElementById('nome-pesquisa').value;
@@ -12,6 +15,7 @@ function criarPesquisa() {
     // Criar um objeto representando a pesquisa
     var novaPesquisa = {
         id: pesquisas.length + 1,
+        idUsuario: url.searchParams.get("idUsuario"),
         nome: nomePesquisa,
         data: dataPesquisa,
         imagem: urlImagem,
@@ -28,9 +32,9 @@ function criarPesquisa() {
 
     // Armazenar a lista atualizada no Local Storage
     localStorage.setItem('pesquisas', JSON.stringify(pesquisas));
-
+    var logado = JSON.parse(localStorage.getItem('usuarioLogado')) || [];
     // Redirecionar para a página home.html
-    window.location.href = 'home.html';
+    window.location.href = 'home.html' + '?idUsuario=' + logado;
 
 }
 
