@@ -46,8 +46,7 @@
                         <label for="file-uploaded-name">Imagem</label>
                         <div class="" style="display: flex;">
                             <input type="text" id="file-uploaded-name">
-                            <label for="my-file-input" class="label-file-input">Escolher arquivo</label>
-                            <input id="my-file-input" type="file" accept="image/*" style="display: none;" onchange="exibirImagem()">
+                            <label for="my-file-input" class="label-file-input">Escolher arquivo</label><input id="my-file-input" type="button" hidden="true" onclick="exibirImagem()">
                         </div>
                     </div>
                     <div class="action-button">
@@ -61,7 +60,7 @@
             <div class="modal-content">
                 <h2>Tem certeza de apagar essa pesquisa?</h2>
                 <div class="modal-actions">
-                    <button onclick="apagarPesquisa(nomePesquisa)" class="modal-close" style="background-color: #FF8383;"><a class="modal-close" href="home.html">Sim</a></button>
+                    <button onclick="apagarPesquisa()" class="modal-close" style="background-color: #FF8383;"><a class="modal-close" href="home.html">Sim</a></button>
                     <button class="modal-confirm" style="background-color: #3F92C5;"><a class="modal-confirm" href="modificar-pesquisa.html">Cancelar</a></button>
                 </div>
             </div>
@@ -88,6 +87,24 @@
         }
         });
     });
+
+    const fileInput = document.querySelector("#my-file-input");
+        const textInput = document.querySelector("#file-uploaded-name");
+        fileInput.addEventListener("change", () => {
+            const filename = fileInput.files[0] ? fileInput.files[0].name : "Nenhum ficheiro selecionado";
+            textInput.value = filename;
+        });
+        function openModal() {
+            const modal = document.querySelector(".modal");
+            modal.style.display = "block";
+        }
+        document.querySelector(".modal-open").addEventListener("click", openModal);
+        document.querySelector(".modal-close").addEventListener("click", () => {
+            document.querySelector(".modal").style.display = "none";
+        });
+        document.querySelector(".modal-confirm").addEventListener("click", () => {
+        });
     </script>
+
 </body>
 </html>

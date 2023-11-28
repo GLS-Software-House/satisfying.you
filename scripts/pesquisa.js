@@ -1,3 +1,5 @@
+
+
 // Recuperar pesquisas do localStorage
 var pesquisas = JSON.parse(localStorage.getItem('pesquisas')) || [];
 
@@ -73,13 +75,6 @@ function alterarPesquisa() {
 
 }
 
-// Exclusão de pesquisa
-function excluirPesquisa() {
-
-}
-
-
-
 // Filtragem de pesquisa
 function filtrarPesquisa() {
     
@@ -108,38 +103,26 @@ function exibirImagem() {
 }
 
 
-// function openModal() {
-//     const modal = document.querySelector(".modal");
-//     modal.style.display = "block";
-// }
-// document.querySelector(".modal-open").addEventListener("click", openModal);
-// document.querySelector(".modal-close").addEventListener("click", () => {
-//     document.querySelector(".modal").style.display = "none";
-// });
-// document.querySelector(".modal-confirm").addEventListener("click", () => {
-// });
+ function apagarPesquisa() {
 
-function apagarPesquisa(nomePesquisa) {
+     const nomePesquisa = document.getElementById('nome-pesquisa').value;
+     const lista = JSON.parse(window.localStorage.getItem('pesquisas'));
 
-    // Encontre a pesquisa pelo nome e remova-a
-    // pesquisasTemporarias = pesquisasTemporarias.filter(function (pesquisa) {
-    //     return pesquisa.nome !== nomePesquisa;
-    // });
+     for (let i = 0; i < lista.length; i++) {
+         if (lista[i].nome === nomePesquisa) {
+             lista.splice(i, 1);
+             break;
+         }
+     }
 
-    pesquisaExcluida = pesquisasTemporarias.filter(function (pesquisa) {
-        return pesquisa.nome == nomePesquisa;
-    });
+     window.localStorage.setItem("pesquisas", JSON.stringify(lista));
+     window.location.href = 'home.html';
+     window.location.reload();
+     
+ }
 
-    localStorage.removeItem(pesquisaExcluida)
 
-    // Atualize as pesquisas temporárias no localStorage
-    localStorage.setItem('pesquisasTemporarias', JSON.stringify(pesquisasTemporarias));
 
-    // Recarregue a página para refletir as alterações
-    location.reload();
-
-    //window.location.href = 'home.html';
-}
 
 // home.js
 document.addEventListener('DOMContentLoaded', function () {
