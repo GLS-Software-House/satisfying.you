@@ -1,28 +1,118 @@
-.content {
-  padding-top: 100px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 120px;
-  justify-content: center;
+.nav-menu {
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-right: 50px;
+}
+  
+input{
+  border: none;
+  width: 97%;
+  height: 27px;
+  color: black;
   align-items: center;
 }
 
-.box1 {
-  background-color: #312464;
-  width: 300px;
-  height: 300px;
-  border-radius: 6%;
-  display: flex;
-  justify-content: center;
-}
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .pesquisa {
+    display: flex;
+    margin-top: 35px;
+    background-color: white;
+    color: #8B8B8B;
+    width: 92%;
+    height: 40px;
+    justify-content: flex-start;
+    align-items: center;
+  }
 
-.box1Content {
-  color: white;
-  font-size: 33px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-self: space;
-  align-self: center;
-  text-decoration: none;
+  .img{
+    width: 100px;
+  }
+  
+  .lupinha {
+    padding-top: 7px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 5px;
+    width: 23.4px;
+    height: 23px;
+  }
+  
+  .content {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 0.1fr; 
+    grid-gap: 120px;
+    justify-content: center; 
+    align-items: center; 
+  }
+  .box1 {
+    background-color: #312464;
+    width: 250px;
+    height: 250px;
+    border-radius: 6%;
+    display: flex;
+    justify-content: center;
+    color: black;
+  }
+
+
+  .txt{
+    color: #3F92C5;
+    display: flex;
+    align-self: flex-end;
+  }
+
+  .box1Content {
+    color: #3F92C5;
+    font-size: 33px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    text-decoration: none;
+  }
+  
+  .data {
+    color: #8B8B8B;
+    font-size: 20px;
+  }
+  
+/* Media query para dispositivos com largura de tela até 768px (incluindo tablets) */
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 25px;
+  }
+  .box1 {
+    b
+    width: 150px; /* Ajuste o tamanho conforme necessário */
+    height: 150px; /* Ajuste o tamanho conforme necessário */
+    border-radius: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-justify: center;
+  }
+
+  .content {
+    padding-top: 50px; /* Reduzi o espaçamento superior */
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Duas colunas centralizadas */
+    grid-gap: 20px; /* Espaçamento entre as colunas */
+    justify-content: center; 
+    align-items: center;
+    justify-content: center;
+  }
+
+  .txt{
+    padding-top: 10px;
+    font-size: medium;
+    align-self: center;
+  }
 }

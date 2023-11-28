@@ -94,13 +94,25 @@ input{
     color: black;
   }
 
+  header {
+    margin: 0;
+    display: grid;
+    grid-template-rows: 1fr auto; /* Define duas linhas, a primeira com 1fr de altura e a segunda automática */
+    height: 100vh; /* Toda a altura da viewport */
+  }
+
+  .logo {
+    width: 100%;
+  }
+
   .content {
     padding-top: 100px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Duas colunas centralizadas */
+    grid-template-columns: repeat(1, 1fr); /* Duas colunas centralizadas */
     grid-gap: 20px; /* Espaçamento entre as colunas */
     justify-content: center; 
     align-items: center; 
 }
+
 
 }
