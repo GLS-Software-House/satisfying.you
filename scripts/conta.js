@@ -1,14 +1,13 @@
-// Buscar contas existentes (email e senha)
+
 if (localStorage.getItem('contas')) {
     var contas = JSON.parse(localStorage.getItem('contas'));
 } else {
     var contas = [];
 }
 
-// Cadastro de usuário
 function criarConta() {
 
-    // Verificar se o email já está cadastrado
+   
     var contaExistente = contas.find(function (conta) {
         return conta.email === email.value;
     });
@@ -18,7 +17,7 @@ function criarConta() {
         return;
     }
 
-    // Verificar se as senhas coincidem
+   
     if (password.value !== repeatPassword.value) {
         document.getElementById('error-message').textContent = 'Senhas não conferem.';
 
@@ -28,21 +27,20 @@ function criarConta() {
         return;
     }
 
-    // Criar um objeto representando a conta
+    
     var novaConta = {
         idUsuario: contas.length + 1,
         email: email.value,
         password: password.value
     };
 
-    // Adicionar a nova conta ao array
+    
     contas.push(novaConta);
 
-    // Armazenar os dados no Local Storage
+   
     localStorage.setItem('contas', JSON.stringify(contas));
 
-    // Redirecionar para a página desejada (substitua 'index.html' pela página desejada)
-    // 
+    
     document.getElementById('error-message').textContent = 'Conta criada! Redirecionando para a página de login.';
     setTimeout(function () {
         window.location.href = 'index.html';
@@ -50,10 +48,9 @@ function criarConta() {
 
     }
 
-// Autenticação de usuário
+
 function entrar() {
 
-    // Verificar credenciais
     var credenciaisCorretas = contas.find(function (conta) {
         return conta.email === email.value && conta.password === password.value;
     });

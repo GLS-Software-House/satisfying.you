@@ -1,20 +1,19 @@
 
 
-// Recuperar pesquisas do localStorage
 var pesquisas = JSON.parse(localStorage.getItem('pesquisas')) || [];
 
-// Cadastro de pesquisa
+
 function criarPesquisa() {
-    // Obtém o id da URL
+   
     var url_string = document.referrer;
     var url = new URL(url_string);
 
-    // Obter os valores dos campos do formulário
+    
     var nomePesquisa = document.getElementById('nome-pesquisa').value;
     var dataPesquisa = document.getElementById('data').value;
     var urlImagem = document.getElementById('file-uploaded-name').value;
 
-    // Criar um objeto representando a pesquisa
+    
     var novaPesquisa = {
         id: pesquisas.length + 1,
         idUsuario: url.searchParams.get("idUsuario"),
@@ -29,13 +28,10 @@ function criarPesquisa() {
         total: 0,
     };
 
-    // Adicionar a nova pesquisa à lista de pesquisas temporárias
     pesquisas.push(novaPesquisa);
 
-    // Armazenar a lista atualizada no Local Storage
     localStorage.setItem('pesquisas', JSON.stringify(pesquisas));
     var logado = JSON.parse(localStorage.getItem('usuarioLogado')) || [];
-    // Redirecionar para a página home.html
     window.location.href = 'home.html' + '?idUsuario=' + logado;
 
 }
@@ -56,10 +52,8 @@ contabilizarVoto = function (voto) {
 }
 
 
-// Alteração de pesquisa
 function alterarPesquisa() {
 
-    // Obtém o id da URL
     var url_string = document.referrer;
     var url = new URL(url_string);
     var id = url.searchParams.get("id");
@@ -75,21 +69,16 @@ function alterarPesquisa() {
 
 }
 
-// Filtragem de pesquisa
 function filtrarPesquisa() {
     
-        // Obter o valor do campo de filtro
         var filtro = document.getElementById('filtro').value;
     
-        // Filtrar as pesquisas pelo nome
         var pesquisasFiltradas = pesquisas.filter(function (pesquisa) {
             return pesquisa.nome.toLowerCase().includes(filtro.toLowerCase());
         });
     
-        // Limpar a lista de pesquisas
         document.getElementById('content').innerHTML = '';
     
-        // Iterar sobre as pesquisas filtradas e criar os cards
         pesquisasFiltradas.forEach(function (pesquisa) {
             criarCard(pesquisa.id, pesquisa.nome, pesquisa.data, pesquisa.imagem);
         });
@@ -126,12 +115,9 @@ function exibirImagem() {
 
 // home.js
 document.addEventListener('DOMContentLoaded', function () {
-    // Recuperar pesquisas temporárias do localStorage
+   
     var pesquisasTemporarias = JSON.parse(localStorage.getItem('pesquisasTemporarias')) || [];
-
-    // Verificar se há pesquisas temporárias
     if (pesquisasTemporarias.length > 0) {
-        // Iterar sobre as pesquisas temporárias e criar os cards
         pesquisasTemporarias.forEach(function (pesquisa) {
             gerarCard(pesquisa.nome, pesquisa.data, pesquisa.imagem);
         });
